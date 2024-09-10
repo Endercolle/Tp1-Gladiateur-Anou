@@ -125,10 +125,12 @@ public class Personnage {
         int forceDeFrappe = attaqueCalcul();
         int defenceCible = personnageCible.getValeurDefense();
         int dommage = forceDeFrappe - defenceCible;
+        
         if (dommage < 0) 
         {
             dommage = 0;
         }
+        
         personnageCible.setPointsDeVie(personnageCible.getPointsDeVie() - dommage);
         System.out.println(nom + " attque avec une puissance de : " + forceDeFrappe);
         System.out.println(personnageCible.getNom() +  " a une défense de : " + defenceCible);

@@ -7,21 +7,23 @@ public class AffichageEcran {
     // **************************************************************************
     // **************************************************************************
     // **************************************************************************
-    // <editor-fold defaultstate="collapsed" desc="M√©thodes d'affichage">
+    // <editor-fold defaultstate="collapsed" desc="MÈthodes d'affichage">
     public void afficherDebutCombat() {
-        // TODO : Afficher le message du d√©but du combat, tel que montr√© dans l'√©nonc√©
+        System.out.println("<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>");
+        System.out.println(">>>>> Que le combat commence ! <<<<<");
+        System.out.println("<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>");
     }
     
     public void afficherSeparateurDeTour() {
-        // TODO : Afficher un retour √† la ligne, suivi d'une ligne d'ast√©risques, tel que montr√© dans l'√©nonc√©
+        // TODO : Afficher un retour ‡ la ligne, suivi d'une ligne d'astÈrisques, tel que montrÈ dans l'ÈnoncÈ
     }
 
     public void afficherSeparateurInfosPerso() {
-        // TODO : Afficher un retour √† la ligne, suivi du s√©parateur "infos personnages", tel que montr√© dans l'√©nonc√©
+        // TODO : Afficher un retour ‡ la ligne, suivi du sÈparateur "infos personnages", tel que montrÈ dans l'ÈnoncÈ
     }
 
     public void afficheVictoire(Personnage personnage1, Personnage personnage2) {
-        // TODO : Afficher le gagnant du combat, tel que montr√© dans l'√©nonc√©
+        // TODO : Afficher le gagnant du combat, tel que montrÈ dans l'ÈnoncÈ
     }
     // </editor-fold>
 }

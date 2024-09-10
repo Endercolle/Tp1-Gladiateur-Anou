@@ -6,9 +6,13 @@ public class Personnage {
     // **************************************************************************
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Attributs">
-    // TODO : Mettre vos attributs ici
+    private String nom;
+    private int pointsDeVie;
+    private int valeurMaxAttaque;
+    private int valeurDefense;
+    private int initiative;
     // </editor-fold>
-
+    
     // **************************************************************************
     // **************************************************************************
     // **************************************************************************
@@ -26,7 +30,7 @@ public class Personnage {
     // **************************************************************************
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Getters et setters">
-    // TODO : Les getters
+    
     // TODO : Les setters
     // </editor-fold>
 

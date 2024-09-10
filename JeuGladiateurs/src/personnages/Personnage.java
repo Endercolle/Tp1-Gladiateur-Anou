@@ -65,7 +65,15 @@ public class Personnage {
     }
 
     public void setPointsDeVie(int pointsDeVie) {
-        this.pointsDeVie = pointsDeVie;
+        if (pointsDeVie < 0) 
+        {
+            this.pointsDeVie = 0;
+        }
+        else
+        {
+            this.pointsDeVie = pointsDeVie;
+        }
+        
     }
 
     public void setValeurMaxAttaque(int valeurMaxAttaque) {
@@ -114,9 +122,17 @@ public class Personnage {
     }
 
     public void frapperPersonnage(Personnage personnageCible) {
-        // TODO : Récupérer la valeur d'attaque pour ce tour, calculer les dégats,
-        //modifier les points de vie du personnage cible, afficher les détails
-        // sur l'attaque, tel que montré dans l'énoncé.
+        int forceDeFrappe = attaqueCalcul();
+        int defenceCible = personnageCible.getValeurDefense();
+        int dommage = forceDeFrappe - defenceCible;
+        if (dommage < 0) 
+        {
+            dommage = 0;
+        }
+        personnageCible.setPointsDeVie(personnageCible.getPointsDeVie() - dommage);
+        System.out.println(nom + " attque avec une puissance de : " + forceDeFrappe);
+        System.out.println(personnageCible.getNom() +  " a une défense de : " + defenceCible);
+        System.out.println("les dommages sont donc de : " + dommage);  
     }
 
     public void setNewInitiativeRandom() {

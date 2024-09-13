@@ -1,6 +1,5 @@
 package jeugladiateurs;
 
-import personnages.Personnage;
 import personnages.Mirmillon;
 import personnages.Retiaire;
 import combat.CompteurDeTour;
@@ -44,26 +43,96 @@ public class JeuGladiateurs {
                     Bob.frapperPersonnage(Igor);
                     if (Bob.isDoubleTour() && Igor.getPointsDeVie() > 0) 
                     {
-                        System.out.println("Bob attaque une deuxième fois");
+                        System.out.println("Bob le malchanceux attaque une deuxième fois");
                         System.out.println("");
                         Bob.frapperPersonnage(Igor);
                         Bob.setDoubleTour(false);
                     }
                     else if(Bob.isDoubleTour() && Igor.getPointsDeVie() == 0)
                     {
-                        System.out.println("Bob décapite Igor");
+                        System.out.println("Bob le malchanceux décapite Igor l'empaleur");
                         System.out.println("");
                         break;
                     }
                     System.out.println("");
-                    Igor.frapperPersonnage(Bob);
+                     if (Igor.getPointsDeVie() > 0) 
+                     {
+                        if (Igor.isSiPossedeFilet()) 
+                    {
+                        System.out.println("Igor l'empaleur lance son filet ");
+                        var filetRoll = (int)(Math.random()*(100-0));
+                        if (filetRoll <= 10) 
+                        {
+                            Bob.setPointsDeVie(0);
+                            System.out.println("Son filet attrape Bob le malchanceux et il l'empale sauvagement avec sa lance");
+                            System.out.println("");
+                            break;
+                        }
+                        else
+                        {
+                            System.out.println("Igor l'empaleur rate son tire et le filet tombe du sol");
+                            System.out.println("");
+                            Igor.setSiPossedeFilet(false);
+                        }
+                    }
+                    else
+                    {
+                        System.out.println("Igor l'empaleur ramasse son filet et en profite pour attaquer");
+                        Igor.setSiPossedeFilet(true);
+                        System.out.println("");
+                        Igor.frapperPersonnage(Bob);
+                        System.out.println("");
+                    }
+                     }
                     break;
                 }
                 if (Igor.getInitiative() == i && Igor.getPointsDeVie() > 0) 
                 {
-                    Igor.frapperPersonnage(Bob);
+                    if (Igor.isSiPossedeFilet()) 
+                    {
+                        System.out.println("Igor l'empaleur lance son filet ");
+                        var filetRoll = (int)(Math.random()*(100-0));
+                        if (filetRoll <= 10) 
+                        {
+                            Bob.setPointsDeVie(0);
+                            System.out.println("Son filet attrape Bob le malchanceux et il l'empale sauvagement avec sa lance");
+                            System.out.println("");
+                            break;
+                        }
+                        else
+                        {
+                            System.out.println("Igor l'empaleur rate son tire et le filet tombe du sol");
+                            System.out.println("");
+                            Igor.setSiPossedeFilet(false);
+                        }
+                    }
+                    else
+                    {
+                        System.out.println("Igor l'empaleur ramasse son filet et en profite pour attaquer");
+                        Igor.setSiPossedeFilet(true);
+                        System.out.println("");
+                        Igor.frapperPersonnage(Bob);
+                        System.out.println("");
+                    }
+                    
+                    if (Bob.getPointsDeVie() > 0) 
+                    {
+                        Bob.frapperPersonnage(Igor);
+                    if (Bob.isDoubleTour() && Igor.getPointsDeVie() > 0) 
+                    {
+                        System.out.println("Bob le malchanceux attaque une deuxième fois");
+                        System.out.println("");
+                        Bob.frapperPersonnage(Igor);
+                        Bob.setDoubleTour(false);
+                    }
+                    else if(Bob.isDoubleTour() && Igor.getPointsDeVie() == 0)
+                    {
+                        System.out.println("Bob le malchanceux décapite Igor l'empaleur");
+                        System.out.println("");
+                        break;
+                    }
                     System.out.println("");
-                    Bob.frapperPersonnage(Igor);
+                    }
                     break;
                 }
             }

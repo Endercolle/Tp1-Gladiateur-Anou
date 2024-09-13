@@ -37,14 +37,14 @@ public class JeuGladiateurs {
             tour.afficheTour();
             for (int i = 0; i < 100; i++) 
             {
-                if (Bob.getInitiative() == i ) 
+                if (Bob.getInitiative() == i && Bob.getPointsDeVie()> 0 ) 
                 {
                     Bob.frapperPersonnage(Igor);
                     System.out.println("");
                     Igor.frapperPersonnage(Bob);
                     break;
                 }
-                if (Igor.getInitiative() == i) 
+                if (Igor.getInitiative() == i && Igor.getPointsDeVie() > 0) 
                 {
                     Igor.frapperPersonnage(Bob);
                     System.out.println("");
@@ -61,7 +61,7 @@ public class JeuGladiateurs {
             affichage.afficherSeparateurDeTour();
             
         } while (Bob.getPointsDeVie() > 0 && Igor.getPointsDeVie() > 0);
-    // TODO : Après la boucle, afficher le résultat du combat
+        affichage.afficheVictoire(Bob, Igor);
     // </editor-fold>
     }
 

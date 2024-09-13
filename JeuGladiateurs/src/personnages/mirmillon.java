@@ -4,7 +4,7 @@ package personnages;
 
 public class mirmillon extends Personnage
 {
-boolean doubleTour;
+private boolean doubleTour;
     public mirmillon(String nom, int attaqueMax, int defense, int pvs, int ini) {
         super(nom, attaqueMax, defense, pvs, ini);
         initiative = 30;

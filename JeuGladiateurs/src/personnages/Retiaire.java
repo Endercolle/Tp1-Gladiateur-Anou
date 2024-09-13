@@ -1,13 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package personnages;
 
-/**
- *
- * @author 202133520
- */
-public class Retiaire {
+public class Retiaire extends Personnage
+{
+    private boolean siPossedeFilet;
+    public Retiaire(String nom, int attaqueMax, int defense, int pvs, int ini) {
+        super(nom, attaqueMax, defense, pvs, ini);
+        siPossedeFilet =true;
+    }
+
+    public boolean isSiPossedeFilet() {
+        return siPossedeFilet;
+    }
+
+    public void setSiPossedeFilet(boolean siPossedeFilet) {
+        this.siPossedeFilet = siPossedeFilet;
+    }
     
 }
